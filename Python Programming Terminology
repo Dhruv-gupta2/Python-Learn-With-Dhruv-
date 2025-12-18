@@ -1,0 +1,104 @@
+
+
+Python Programming Terminology
+
+
+Understanding the basic terminology in Python programming is essential for anyone looking to become proficient in this versatile language. Here are some key terms and concepts you'll encounter frequently:
+
+Keywords
+Keywords are reserved words in Python used for specific purposes. They form the syntax of the language and cannot be used as identifiers (names for variables, functions, etc.). Examples of keywords include:
+
+ and 
+ for loops
+ and 
+ for boolean values
+Variables
+Variables are names that reference a memory location where data is stored. They are user-defined and cannot be named using keywords. For example:
+
+
+
+
+x = 5
+
+Here, 
+ is stored at some memory location, and 
+ is a variable referencing that location.
+
+Functions
+Functions are sequences of instructions that perform a specific task. They can take inputs, process them, and return outputs. For instance:
+
+The 
+ function displays output on the screen:
+
+
+
+print("Hello, World!")
+The 
+ function takes user input:
+
+
+
+x = input("Enter your name: ")
+Classes and Objects
+Classes are blueprints for creating objects. They encapsulate data for the object and methods to manipulate that data. For example, in a college management software:
+
+A 
+ class might have attributes like 
+ and 
+, and methods like 
+.
+A 
+ class might have attributes like 
+ and 
+, and methods like 
+.
+Objects are instances of classes.
+
+In Python, everything is an object, including primitive data types like integers and strings.
+
+Modules and Packages
+Modules are Python files that contain related code, such as functions and classes. They help in organizing and reusing code. For example:
+
+
+
+
+import math
+print(math.factorial(5))
+Packages are collections of modules organized in directories. They help manage large codebases by grouping related modules. A package may contain sub-packages and modules:
+
+college/
+    __init__.py
+    student.py
+    teacher.py
+    courses/
+        __init__.py
+        cs_course.py
+        ec_course.py
+Importing Modules
+To use a module in another module, you use the 
+ statement. For example:
+
+
+
+
+import math
+print(math.sqrt(16))
+If a module is part of a package, you use dotted notation:
+
+
+
+
+from college.student import Student
+Python Path
+The Python Path is an environment variable that specifies the directories where Python looks for modules. When you import a module, Python searches for it in the following order:
+
+1. The current directory
+
+2. Directories listed in the 
+ environment variable
+
+3. Standard library directories
+
+
+
+Practice | GeeksforGeeks | A computer science portal for geeks
