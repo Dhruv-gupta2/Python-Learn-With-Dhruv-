@@ -1,0 +1,92 @@
+
+Python Program to Swap Two Variables
+
+The task of swapping two variables in Python involves exchanging their values without losing any data . For example, if x = 10 and y = 50, after swapping, x becomes 50 and y becomes 10. 
+
+Using Tuple Unpacking
+Tuple unpacking is the most efficient method as it eliminates the need for extra memory or temporary variables. It also enhances code readability and performance, making it the preferred choice in Python.
+
+
+
+
+x, y = 10, 50
+​
+x, y = y, x  # swapping
+​
+print("x:", x)
+print("y:", y)
+
+Output
+x: 50
+y: 10
+Explanation: x, y = y, x uses tuple unpacking to swap the values of x and y in a single step. It first creates a temporary tuple (y, x), then unpacks it back into x and y, eliminating the need for an extra variable .
+
+python-swap-two-variable
+Table of Content
+
+Using airthmetic operations
+Using xor operator
+Using temporary variable
+Using Arithmetic Operations
+By using basic arithmetic operations, we can swap two variables without a temporary variable. This method is efficient and works well for integers. However, in some languages, it may cause overflow with very large numbers.
+
+
+
+
+x, y = 10, 50
+​
+x = x + y  
+y = x - y  
+x = x - y  
+​
+print("x:", x)
+print("y:", y)
+
+Output
+x: 50
+y: 10
+Explanation: First, x is updated to the sum of x and y. Then, y is reassigned to x - y, which effectively gives it the original value of x. Finally, x is updated to x - y, restoring y’s original value to x.
+
+Using XOR Operator
+XOR (Exclusive OR) operator can be used to swap two variables at the bit level without requiring additional memory. This method is commonly used in low-level programming but can be harder to read and understand compared to other approaches.
+
+
+
+
+x, y = 10, 50
+​
+x = x ^ y  
+y = x ^ y  
+x = x ^ y  
+​
+print("x:", x)
+print("y:", y)
+
+Output
+x: 50
+y: 10
+Explanation: First, x = x ^ y stores the XOR result of x and y in x. Next, y = x ^ y applies XOR again, effectively retrieving the original value of x and storing it in y. Finally, x = x ^ y retrieves the original value of y and assigns it to x, completing the swap .
+
+Using Temporary Variable
+The traditional method of swapping two variables uses an additional temporary variable. While it is straightforward and easy to understand, it is not the most optimized approach as it requires extra memory allocation. This method is mainly used when clarity is more important than efficiency.
+
+
+
+
+x, y = 10, 50
+​
+temp = x  
+x = y  
+y = temp  
+​
+print("x:", x)
+print("y:", y)
+
+Output
+x: 50
+y: 10
+Explanation: First, temp = x stores the value of x, then x = y assigns y’s value to x, and finally, y = temp restores x’s original value into y.
+
+
+
+Practice | GeeksforGeeks | A computer science portal for geeks
