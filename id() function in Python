@@ -1,0 +1,126 @@
+
+
+id() function in Python
+
+In Python, id() function is a built-in function that returns the unique identifier of an object. The identifier is an integer, which represents the memory address of the object. The id() function is commonly used to check if two variables or objects refer to the same memory location.
+
+Python id() Function Syntax
+Syntax: id(object)
+
+
+Return: a unique integer for a given object
+
+
+How id() Function Work?
+In this example, we can see the function accepts a single parameter and is used to return the identity of an object. This identity has to be unique and constant for this object during its lifetime. Two objects with non-overlapping lifetimes may have the same id() value. If we relate this to C, they are the memory address, here in Python it is the unique ID. This function is generally used internally in Python. 
+
+
+
+
+x = 42
+y = x
+z = 42
+​
+print(id(x))  
+print(id(y))  # (same as x)
+print(id(z))  # (same as x and y)
+
+Output
+140642115230496
+140642115230496
+140642115230496
+Python id() function Examples
+Below are the ways with which we can use id() function in Python:
+
+Inbuilt DataTypes
+Custom Object
+With Sets
+With Tuples
+Python id() for Inbuilt DataTypes
+In this example, we are printing the id of multiple datatypes like strings and lists to get object identity in Python
+
+
+
+
+# This program shows various identities
+str1 = "geek"
+print(id(str1))
+​
+str2 = "geek"
+print(id(str2))
+​
+# This will return True
+print(id(str1) == id(str2))
+​
+# Use in Lists
+list1 = ["aakash", "priya", "abdul"]
+print(id(list1[0]))
+print(id(list1[2]))
+​
+# This returns false
+print(id(list1[0])==id(list1[2]))
+
+Output
+140161148229168
+140161148229168
+True
+140161147809712
+140161147916400
+False
+Python id() for custom object
+In this example, we are creating the Python class and we are creating two Python class objects and checking their ids to get object identity in Python.
+
+
+
+
+class MyClass:
+    pass
+​
+# Create two instances of MyClass
+obj1 = MyClass()
+obj2 = MyClass()
+​
+# Print the id of each object
+print(id(obj1))
+print(id(obj2))
+
+Output
+140225741483792
+140225741483856
+Python id() with Sets
+In this example, we are using the id function on sets to get object identity in Python.
+
+
+
+
+set1 = {1, 2, 3}
+set2 = {3, 2, 1}
+set3 = {1, 2, 3}
+​
+print(id(set1))  # Output: <id1>
+print(id(set2))  # Output: <id2>
+print(id(set3))  # Output: <id3>
+
+Output
+140483509094352
+140483509093872
+140483509095792
+Python id() with Tuples
+In this example, we are using the id function on tuples to get object identity in Python.
+
+
+
+
+tuple1 = (1, 2, 3)
+tuple2 = (3, 2, 1)
+tuple3 = (1, 2, 3)
+​
+print(id(tuple1))  # Output: <id1>
+print(id(tuple2))  # Output: <id2>
+print(id(tuple3))  # Output: <id3>
+
+Output
+140544960491680
+140544960107456
+140544960491680
+
