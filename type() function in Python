@@ -1,0 +1,137 @@
+
+type() function in Python
+
+The type() function is mostly used for debugging purposes. Two different types of arguments can be passed to type() function, single and three arguments. If a single argument type(obj) is passed, it returns the type of the given object. If three argument types (object, bases, dict) are passed, it returns a new type object. 
+
+Python type() function Syntax
+Syntax: type(object, bases, dict)
+
+Parameters : 
+
+object: Required. If only one parameter is specified, the type() function returns the type of this object
+bases : tuple of classes from which the current class derives. Later corresponds to the __bases__ attribute. 
+dict : a dictionary that holds the namespaces for the class. Later corresponds to the __dict__ attribute.
+Return: returns a new type class or essentially a metaclass.
+
+How type() Function Works in Python?
+In the given example, we are printing the type of variable x. We will determine the type of an object in Python.
+
+
+
+
+x = 10
+print(type(x))
+
+Output
+<class 'int'>
+Examples of the type() function in Python
+By using type() function, we can determine the type of an object in Python. Below are some more examples related to type() function:
+
+Finding the type of a Python object
+Here we are checking the object type using the type() function in Python.
+
+
+a = ("Geeks", "for", "Geeks")
+b = ["Geeks", "for", "Geeks"]
+c = {"Geeks": 1, "for":2, "Geeks":3}
+d = "Hello World"
+e = 10.23
+f = 11.22
+
+print(type(a))
+print(type(b))
+print(type(c))
+print(type(d))
+print(type(e))
+print(type(f))
+
+Output
+<class 'tuple'>
+<class 'list'>
+<class 'dict'>
+<class 'str'>
+<class 'float'>
+<class 'float'>
+Check if an Object is of Type in Python
+In this example, we are testing the object using conditions, and printing the boolean.
+
+
+
+
+print(type([]) is list)
+​
+print(type([]) is not list)
+​
+print(type(()) is tuple)
+​
+print(type({}) is dict)
+​
+print(type({}) is not list)
+
+Output
+True
+False
+True
+True
+True
+Using type() with Conditional Statement
+In this example , we are using type() function to determine the type of an object in Python with conditional if-else statement.
+
+
+
+
+# Example variables
+my_tuple = (10, 'Hello', 45, 'Hi')
+my_dict = {1: 'One', 2: 'Two', 3: 'Three'}
+​
+# Check if the variables have the same object type
+if type(my_tuple) is not type(my_dict):
+    print("The variables have different object types.")
+else:
+    print("The variables have the same object type.")
+
+Output
+The variables have different object types.
+Python type() With 3 Parameters
+In the given example, we are creating a class without a base class and a class derived from a base class. The type() function allows for programmatically defining classes and their attributes at runtime.
+
+
+# New class(has no base) class with the
+# dynamic class initialization of type()
+new = type('New', (object, ),
+           dict(var1='GeeksforGeeks', b=2009))
+
+# Print type() which returns class 'type'
+print(type(new))
+print(vars(new))
+
+
+# Base class, incorporated
+# in our new class
+class test:
+    a = "Geeksforgeeks"
+    b = 2009
+
+
+# Dynamically initialize Newer class
+# It will derive from the base class test
+newer = type('Newer', (test, ),
+             dict(a='Geeks', b=2018))
+
+print(type(newer))
+print(vars(newer))
+Output
+
+<class 'type'>
+
+{'var1': 'GeeksforGeeks', 'b': 2009, '__module__': '__main__', '__dict__': <attribute '__dict__' of 'New' objects>, '__weakref__': <attribute '__weakref__' of 'New' objects>, '__doc__': None}
+
+<class 'type'>
+
+{'a': 'Geeks', 'b': 2018, '__module__': '__main__', '__doc__': None}
+
+Applications of Python type() Function 
+type() function is basically used for debugging purposes. When using other string functions like .upper(), .lower(), and .split() with text extracted from a web crawler, it might not work because they might be of different type which doesn't support string functions. And as a result, it will keep throwing errors, which are very difficult to debug [Consider the error as GeneratorType has no attribute lower() ]. 
+type() function can be used at that point to determine the type of text extracted and then change it to other forms of string before we use string functions or any other operations on it.
+type() with three arguments can be used to dynamically initialize classes or existing classes with attributes. It is also used to register database tables with SQL.
+In unit testing frameworks, type() can be used to validate the output of functions or methods, ensuring that the expected data types are returned.
